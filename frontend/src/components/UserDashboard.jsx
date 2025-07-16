@@ -32,7 +32,7 @@ function UserDashboard({ user }) {
     <div className="user-dashboard">
       <div className="user-header">
         <div className="user-header-left">
-          <h1>FinQuery</h1>
+          <h1>PortIQ</h1>
           <span className="user-badge">User Dashboard</span>
         </div>
         <div className="user-header-right">

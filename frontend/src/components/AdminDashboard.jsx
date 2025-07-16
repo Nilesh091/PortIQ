@@ -127,7 +127,7 @@ function AdminDashboard({ user }) {
               </div>
               <div>
                 <h1 className="admin-title">
-                  FinQuery
+                  PortIQ
                 </h1>
                 <p className="admin-subtitle">Advanced AI-Powered Portfolio Analysis</p>
               </div>

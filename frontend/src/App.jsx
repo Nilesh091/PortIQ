@@ -62,7 +62,7 @@ function App() {
         <div className="welcome-content">
           <div className="hero-section">
             <h1 className="hero-title">
-              Welcome to FinQuery — Your AI-Powered Wealth Intelligence Assistant
+              Welcome to PortIQ — Your AI-Powered Wealth Intelligence Assistant
             </h1>
             <p className="hero-subtitle">
               Ask natural language questions like:
