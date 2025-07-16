@@ -1,0 +1,200 @@
+.portfolio-table-container {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.portfolio-table-container:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.portfolio-table {
+  min-width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.portfolio-table thead {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+
+.portfolio-table thead tr {
+  background: #e5e7eb;
+  color: #4b5563;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.portfolio-table th {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+  border-bottom: 2px solid #d1d5db;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.portfolio-table th:hover {
+  background-color: #d1d5db;
+}
+
+.portfolio-table th::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-table th:hover::after {
+  transform: scaleX(1);
+}
+
+.portfolio-table tbody {
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 300;
+}
+
+.portfolio-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.portfolio-table tbody tr:hover {
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.portfolio-table tbody tr::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-table tbody tr:hover::before {
+  transform: scaleY(1);
+}
+
+.portfolio-table td {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+  white-space: nowrap;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.portfolio-table td:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .portfolio-table-container {
+    margin: 0 -1rem;
+    border-radius: 0;
+  }
+  
+  .portfolio-table th,
+  .portfolio-table td {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+  
+  .portfolio-table thead {
+    font-size: 0.75rem;
+  }
+}
+
+/* Animation for table rows */
+.portfolio-table tbody tr {
+  animation: fadeInRow 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.portfolio-table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+.portfolio-table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+.portfolio-table tbody tr:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInRow {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced hover effects */
+.portfolio-table tbody tr:hover td {
+  color: #1f2937;
+  font-weight: 500;
+}
+
+/* Loading state */
+.portfolio-table.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.portfolio-table.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 4px solid #f3f4f6;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Empty state */
+.portfolio-table-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.portfolio-table-empty::before {
+  content: '📊';
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+} 

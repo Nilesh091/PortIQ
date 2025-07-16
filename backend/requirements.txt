@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+python-jose
+passlib[bcrypt]
+python-dotenv
+mysql-connector-python
+langchain
+langchain-google-genai
+langchain-community
+google-generativeai
+pandas
+matplotlib
+seaborn
+plotly
